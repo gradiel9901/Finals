@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8953210072266299524}
   - component: {fileID: 3700671602804317709}
   - component: {fileID: -6514373713811517686}
+  - component: {fileID: 2905554335006980374}
   m_Layer: 0
   m_Name: Crate 3
   m_TagString: Untagged
@@ -134,3 +135,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyVFX: {fileID: 6324665429406125755, guid: c190a7c4c5f91dc4288102bd526e31c4, type: 3}
+--- !u!114 &2905554335006980374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872558782788644700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491d52704ec304a4aa7cea27cc0a060b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldCoin: {fileID: 4688185813015929424, guid: decda5080b66ad44d9063a3820ddfd97, type: 3}
+  healthGlobe: {fileID: 4688185813015929424, guid: 8a7a891915f866f469f6edbe6fbe4260, type: 3}
+  staminaGlobe: {fileID: 4688185813015929424, guid: a50b0e6e06b1a494886a386ee314434d, type: 3}
