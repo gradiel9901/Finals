@@ -13,19 +13,21 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private float damageRecoveryTime = 1f;
 
     private Slider healthSlider;
-    private int currentHealth;
+    public int currentHealth;
     private bool canTakeDamage = true;
     private Knockback knockback;
     private Flash flash;
 
     const string HEALTH_SLIDER_TEXT = "Health Slider";
-    const string TOWN_TEXT = "Scene1";
+    const string TOWN_TEXT = "GameOver";
     readonly int DEATH_HASH = Animator.StringToHash("Death");
+
+    AudioManager audioManager;
 
     protected override void Awake()
     {
         base.Awake();
-
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         flash = GetComponent<Flash>();
         knockback = GetComponent<Knockback>();
     }
@@ -75,13 +77,19 @@ public class PlayerHealth : Singleton<PlayerHealth>
     {
         if (currentHealth <= 0 && !isDead)
         {
+            audioManager.PlaySFX(audioManager.death);
             isDead = true;
             Destroy(ActiveWeapon.Instance.gameObject);
             currentHealth = 0;
             GetComponent<Animator>().SetTrigger(DEATH_HASH);
+            
+            // Reset gold to zero
+            EconomyManager.Instance.UpdateDeadGold();
+
             StartCoroutine(DeathLoadSceneRoutine());
         }
     }
+
 
     private IEnumerator DeathLoadSceneRoutine()
     {

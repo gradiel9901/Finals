@@ -371,3 +371,4 @@ MonoBehaviour:
   goldCoin: {fileID: 4688185813015929424, guid: decda5080b66ad44d9063a3820ddfd97, type: 3}
   healthGlobe: {fileID: 4688185813015929424, guid: 8a7a891915f866f469f6edbe6fbe4260, type: 3}
   staminaGlobe: {fileID: 4688185813015929424, guid: a50b0e6e06b1a494886a386ee314434d, type: 3}
+  Gem: {fileID: 0}

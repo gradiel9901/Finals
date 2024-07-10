@@ -12,7 +12,8 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -42,7 +43,7 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 8.105961, g: 1.8882166, b: 23.547167, a: 0}
+    - _Color: {r: 0, g: 1.8442273, b: 2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5266159858889738970
 MonoBehaviour:

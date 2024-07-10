@@ -8,7 +8,11 @@ public class PickUpSpawner : MonoBehaviour
 
     public void DropItems()
     {
-        int randomNum = Random.Range(1, 5);
+        // Always drop the Gem
+        Instantiate(Gem, transform.position, Quaternion.identity);
+        Instantiate(staminaGlobe, transform.position, Quaternion.identity);
+
+        int randomNum = Random.Range(1, 4);
 
         if (randomNum == 1)
         {
@@ -21,11 +25,6 @@ public class PickUpSpawner : MonoBehaviour
         }
 
         if (randomNum == 3)
-        {
-            Instantiate(Gem, transform.position, Quaternion.identity);
-        }
-
-        if (randomNum == 4)
         {
             int randomAmountOfGold = Random.Range(1, 4);
 

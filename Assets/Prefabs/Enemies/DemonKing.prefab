@@ -100,13 +100,14 @@ GameObject:
   - component: {fileID: 6644197515522464948}
   - component: {fileID: 4041019525944049796}
   - component: {fileID: 5038453004820451365}
-  - component: {fileID: 4464320240240431233}
   - component: {fileID: 2820414571586707301}
   - component: {fileID: 3443464573348452527}
   - component: {fileID: 1310530233234877379}
+  - component: {fileID: 1189896459031267780}
+  - component: {fileID: 3825662325432474876}
   m_Layer: 0
   m_Name: DemonKing
-  m_TagString: Untagged
+  m_TagString: DemonKIng
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,8 +212,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02366209, y: 0.020548105}
-  m_Size: {x: 1.4953604, y: 2.7076283}
+  m_Offset: {x: -0.78650045, y: -0.61695695}
+  m_Size: {x: 3.8063154, y: 5.6657043}
   m_Direction: 0
 --- !u!50 &7435739312306308150
 Rigidbody2D:
@@ -254,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2
-  attackRange: 8
+  attackRange: 15
   enemyType: {fileID: 1310530233234877379}
   attackCooldown: 1.5
   stopMovingWhileAttacking: 0
@@ -304,22 +305,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6991e12ebd36a5e4dbe84eb2c5b45f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 400
   deathVFXPrefab: {fileID: 4854970779150871894, guid: 993055abeb94c3c468c98d070ca9607c, type: 3}
   knockBackThrust: 15
---- !u!114 &4464320240240431233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8486291726516344311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687e4df2d64f3564e92eccf1588349d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockBackTime: 0.2
+  currentHealth: 0
 --- !u!114 &2820414571586707301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,9 +335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491d52704ec304a4aa7cea27cc0a060b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldCoin: {fileID: 0}
-  healthGlobe: {fileID: 0}
-  staminaGlobe: {fileID: 4688185813015929424, guid: e7cda4dca453cd645a1b6ae7e1c33b8b, type: 3}
+  goldCoin: {fileID: 4688185813015929424, guid: decda5080b66ad44d9063a3820ddfd97, type: 3}
+  healthGlobe: {fileID: 4688185813015929424, guid: 8a7a891915f866f469f6edbe6fbe4260, type: 3}
+  staminaGlobe: {fileID: 4688185813015929424, guid: a50b0e6e06b1a494886a386ee314434d, type: 3}
   Gem: {fileID: 4688185813015929424, guid: 213c46b7c8faf44428fcf6ca5221bcc1, type: 3}
 --- !u!114 &1310530233234877379
 MonoBehaviour:
@@ -363,12 +352,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8754828511832876952, guid: e52601d7173f71b47b41bb6e5aee557d, type: 3}
-  bulletMoveSpeed: 8
-  burstCount: 1
-  projectilesPerBurst: 1
-  angleSpread: 1
-  startingDistance: 0.1
+  bulletMoveSpeed: 15
+  burstCount: 4
+  projectilesPerBurst: 15
+  angleSpread: 167
+  startingDistance: 5
   timeBetweenBursts: 0.1
   restTime: 1
-  stagger: 0
-  oscillate: 0
+  stagger: 1
+  oscillate: 1
+--- !u!114 &1189896459031267780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486291726516344311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af98c58530a001488f33b02fd37fa7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: 0}
+--- !u!114 &3825662325432474876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486291726516344311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687e4df2d64f3564e92eccf1588349d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.2

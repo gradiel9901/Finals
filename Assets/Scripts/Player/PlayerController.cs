@@ -6,12 +6,13 @@ public class PlayerController : Singleton<PlayerController>
 {
     public bool FacingLeft { get { return facingLeft; } }
 
-
+    
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private TrailRenderer myTrailRenderer;
     [SerializeField] private Transform weaponCollider;
 
+    public int CurrentScene;
     private PlayerControls playerControls;
     private Vector2 movement;
     private Rigidbody2D rb;
@@ -23,10 +24,11 @@ public class PlayerController : Singleton<PlayerController>
     private bool facingLeft = false;
     private bool isDashing = false;
 
+    AudioManager audioManager;
     protected override void Awake()
     {
         base.Awake();
-
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
@@ -103,8 +105,11 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Dash()
     {
+
+
         if (!isDashing && Stamina.Instance.CurrentStamina > 0)
         {
+            audioManager.PlaySFX(audioManager.dash);
             Stamina.Instance.UseStamina();
             isDashing = true;
             moveSpeed *= dashSpeed;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    private enum PickUpType
+    public enum PickUpType
     {
         GoldCoin,
         StaminaGlobe,

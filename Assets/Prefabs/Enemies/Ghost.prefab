@@ -100,10 +100,10 @@ GameObject:
   - component: {fileID: 6644197515522464948}
   - component: {fileID: 4041019525944049796}
   - component: {fileID: 5038453004820451365}
-  - component: {fileID: 4464320240240431233}
   - component: {fileID: 2820414571586707301}
   - component: {fileID: 3443464573348452527}
   - component: {fileID: 1310530233234877379}
+  - component: {fileID: 842551459454251034}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -147,7 +147,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 28dc5b871197aad4aa9893da6d6f8076, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -254,9 +254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2
-  attackRange: 8
+  attackRange: 12
   enemyType: {fileID: 1310530233234877379}
-  attackCooldown: 1.5
+  attackCooldown: 0.5
   stopMovingWhileAttacking: 0
 --- !u!114 &6644197515522464948
 MonoBehaviour:
@@ -307,19 +307,7 @@ MonoBehaviour:
   startingHealth: 10
   deathVFXPrefab: {fileID: 4854970779150871894, guid: 993055abeb94c3c468c98d070ca9607c, type: 3}
   knockBackThrust: 15
---- !u!114 &4464320240240431233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8486291726516344311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687e4df2d64f3564e92eccf1588349d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockBackTime: 0.2
+  currentHealth: 0
 --- !u!114 &2820414571586707301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +337,7 @@ MonoBehaviour:
   goldCoin: {fileID: 4688185813015929424, guid: decda5080b66ad44d9063a3820ddfd97, type: 3}
   healthGlobe: {fileID: 4688185813015929424, guid: 8a7a891915f866f469f6edbe6fbe4260, type: 3}
   staminaGlobe: {fileID: 4688185813015929424, guid: a50b0e6e06b1a494886a386ee314434d, type: 3}
-  Gem: {fileID: 0}
+  Gem: {fileID: 4688185813015929424, guid: decda5080b66ad44d9063a3820ddfd97, type: 3}
 --- !u!114 &1310530233234877379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,12 +351,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8754828511832876952, guid: e52601d7173f71b47b41bb6e5aee557d, type: 3}
-  bulletMoveSpeed: 8
+  bulletMoveSpeed: 5
   burstCount: 1
-  projectilesPerBurst: 1
+  projectilesPerBurst: 2
   angleSpread: 1
   startingDistance: 0.1
   timeBetweenBursts: 0.1
-  restTime: 1
+  restTime: 0.5
   stagger: 0
   oscillate: 0
+--- !u!114 &842551459454251034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486291726516344311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687e4df2d64f3564e92eccf1588349d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.2
